@@ -182,8 +182,61 @@ int main(){
     result = f1 / f2; // 1.68
     
     // Operator Precedence
-    
+    // + and - are in equal precedence, as are *,/, and %.
+    // *, /, and % are performed first in order from left to right, then + and -, also from left to right.
+    // Use parentheses
+    int a8 = 6;
+    int b8 = 4;
+    int c8 = 2;
+    int result8;
+    result8 = a8 - b8 + c8; //4
+    printf("%d\n", result8);
+    result8 = a8 + b8 / c8; //8
+    printf("%d\n", result8);
+    result = (a8 + b8) / c8; // 5
+    printf("%d\n", result8);
 
+    // Type Conversion
+    // In operation involving floats and ints, the compiler will convert the int values to float values.
+    float price = 6.50;
+    int increase = 2;
+    float newPrice;
+    newPrice = price + increase;
+    printf("New price is %4.2f", newPrice);
+    // When we want to force the result of an expression to a different type, we can perform
+    // explicit type conversion
+    float average;
+    int total1 = 23;
+    int count1 = 4;
+    average = (float) total1 / count1; 
+    // Without type casting, average will be assigned 5
+    // Explicit type conversion is always a good practice
+
+
+    // Assignment Operators
+    // Evaluates the expression on the right side of the equal sign first
+    x=3;
+    x = x +1;
+    x += 1;
+    x -= 1;
+    x *=3;
+    x /=2;
+    x %=2;
+    x +=3*2; // this will be evaulated as x = x + 3*2. 3*2 will be executed first.
+
+
+    // Increment and decrement
+    int z1=0;
+    z1++;
+    int y1=0;
+    y1--;
+
+    // y-- : postfix
+    // --y : prefix
+    z1 = 3;
+    x = z1--; // assigns value of z1 first and then decrement z to 2
+    int y = 3;
+    x = ++y; // increment y to 4, then assign 4 to x
 
     return 0;
     // return 0: program executed successfully. Any other number means program has failed.
